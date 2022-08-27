@@ -1,7 +1,7 @@
 import express from "express";
 // import { BigQuery } from "@google-cloud/bigquery"; //TODO add example
 import { Storage } from "@google-cloud/storage";
-import { credentials } from "./../AuthController.js";
+import { credentials } from "./AuthController.js";
 
 
 const router = express.Router();

@@ -30,8 +30,10 @@ app.use(express.static(path.join(__dirname, "server/build")));
 app.get("/status", (req, res) => {
   res.send({
     status: 200,
-    message: "hello api"
-    // redirect_uri: process.env.REDIRECT_URI,
+    message: "hello api",
+    redirect_uri: process.env.REDIRECT_URI,
+    client_id: process.env.CLIENT_ID,
+    client_secret: process.env.CLIENT_SECRET,
   });
 });
 

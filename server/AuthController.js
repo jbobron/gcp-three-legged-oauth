@@ -44,7 +44,7 @@ router.get("/redirect", async (req, res) => { //auth-calback
       client.credentials.access_token
     );
     console.log("tokenInfo ", tokenInfo);
-    let location = "http://localhost:3000" //process.env.FRONTEND_REDIRECT_URI_DEV;
+    let location = process.env.FRONTEND_REDIRECT_URI_DEV;
 
     res
       .writeHead(301, {

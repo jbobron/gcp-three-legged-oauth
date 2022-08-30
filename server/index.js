@@ -37,16 +37,11 @@ app.get("/status", (req, res) => {
   });
 });
 
-
-
-
-
 app.use("/api/cloud-storage", CloudStorageController);
 app.use("/api/auth", AuthController);
 
-
 const port = process.env.PORT || 4000;
 
-const server = app.listen(port, function () {
+app.listen(port, function () {
   console.log(`Server listening on port ${port}`);
 });

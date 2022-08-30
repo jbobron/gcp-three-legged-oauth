@@ -1,17 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, useNavigate } from 'react-router-dom';
+import Routes from './Routes';
 import './index.css';
-import App from './App';
-// import reportWebVitals from './reportWebVitals';
+
+const withRouter = (Component) => {
+  const Wrapper = (props) => {
+    const history = useNavigate();
+    return <Component history={history} {...props} />;
+  };
+  return Wrapper;
+};
+
+const RoutesWithRouter = withRouter((props) => <Routes {...props} />);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+    <RoutesWithRouter />
+    </BrowserRouter>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();

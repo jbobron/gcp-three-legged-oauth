@@ -34,12 +34,12 @@ CONSTRANTS
 
 
 QUESTIONS
-- 1. do i need a db users table to store email, refresh/access tokens, and expiry date? or can we reply on google to manage our users?
-- 2. if we dont need a db, how do we manage multiple concurrent users in production? lets say we are getting 5 requests at the same time from different users. we need our server to be "stateless" and never cache credentials (it must use a db for this right?)
-- 3. do we need an nodejs server? should we be making this requests via the JSON Api endpoint instead of the node cloud storage library?
-- 4. how does this code need to change to be deployed in Cloud Run in a docker container? (assume we are able to set/have access to the environment variables described above in Cloud Run)
-- 5. how do we pass credentials/access_token/refresh_token from the AuthController to the CloudStorageController? or is that an antipattern? are we supposed to get the credentials/access_token/refresh_token from the browser localStorage?
-- 6. what is the purpose of all of these libraries and which one(s) should i be using?
+1. do i need a db users table to store email, refresh/access tokens, and expiry date? or can we reply on google to manage our users?
+2. if we dont need a db, how do we manage multiple concurrent users in production? lets say we are getting 5 requests at the same time from different users. we need our server to be "stateless" and never cache credentials (it must use a db for this right?)
+3. do we need an nodejs server? should we be making this requests via the JSON Api endpoint instead of the node cloud storage library?
+4. how does this code need to change to be deployed in Cloud Run in a docker container? (assume we are able to set/have access to the environment variables described above in Cloud Run)
+5. how do we pass credentials/access_token/refresh_token from the AuthController to the CloudStorageController? or is that an antipattern? are we supposed to get the credentials/access_token/refresh_token from the browser localStorage?
+6. what is the purpose of all of these libraries and which one(s) should i be using?
  - https://github.com/googleapis/google-api-nodejs-client
  - https://github.com/google/google-api-javascript-client
  - https://github.com/googleapis/google-cloud-node
@@ -47,6 +47,6 @@ QUESTIONS
  - https://github.com/googleapis/nodejs-storage
  - https://github.com/googleapis/nodejs-bigquery
 
-- 7. what "token" should i be storing in the browser? (if any?) refresh? access? code? should i be re-validating that token for every request? (ex: `googleClient.verifyIdToken({})`)
-- 8. is it possible to use Passport? AuthO? would that make it simplier? can we get a working tutorial/example?
-- 9. should we not be using a nodejs server and just have a react client that uses the https://storage.googleapis.com/<cloud_storage_path> json api? via https://developers.google.com/oauthplayground
+7. what "token" should i be storing in the browser? (if any?) refresh? access? code? should i be re-validating that token for every request? (ex: `googleClient.verifyIdToken({})`)
+8. is it possible to use Passport? AuthO? would that make it simplier? can we get a working tutorial/example?
+9. should we not be using a nodejs server and just have a react client that uses the https://storage.googleapis.com/<cloud_storage_path> json api? via https://developers.google.com/oauthplayground

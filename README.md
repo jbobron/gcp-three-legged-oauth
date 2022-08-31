@@ -48,4 +48,5 @@ QUESTIONS
  - https://github.com/googleapis/nodejs-bigquery
 
 - 7) what "token" should i be storing in the browser? (if any?) refresh? access? code? should i be re-validating that token for every request? (ex: `googleClient.verifyIdToken({})`)
+- 8) is it possible to use Passport? AuthO? would that make it simplier? can we get a working tutorial/example?
 

@@ -49,4 +49,4 @@ QUESTIONS
 
 - 7) what "token" should i be storing in the browser? (if any?) refresh? access? code? should i be re-validating that token for every request? (ex: `googleClient.verifyIdToken({})`)
 - 8) is it possible to use Passport? AuthO? would that make it simplier? can we get a working tutorial/example?
-
+- 9) should we not be using a nodejs server and just have a react client that uses the https://storage.googleapis.com/<cloud_storage_path> json api? via https://developers.google.com/oauthplayground
